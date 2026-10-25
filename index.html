@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>석지환 ♥ 백혜정 결혼합니다</title>
+
+  <!-- 카카오톡/문자로 링크 공유 시 보이는 미리보기 (배포 후 URL로 수정) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="석지환 ♥ 백혜정 결혼합니다" />
+  <meta property="og:description" content="2026년 12월 13일 일요일 낮 12시 20분 · 더 리버사이드 호텔 노벨라홀" />
+  <meta property="og:image" content="https://jhhj-wedding.github.io/images/og.jpg" />
+  <meta property="og:url" content="https://jhhj-wedding.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <main class="container">
+
+    <!-- 메인 -->
+    <section class="hero">
+      <p class="hero-label">❄ WINTER WEDDING ❄</p>
+      <img class="hero-photo" id="hero-photo" alt="신랑 신부 사진" />
+      <h1 class="hero-names"><span id="hero-groom"></span><span class="amp">&amp;</span><span id="hero-bride"></span></h1>
+      <p class="hero-tagline" id="hero-tagline"></p>
+      <p class="hero-date" id="hero-date"></p>
+      <p class="hero-venue" id="hero-venue"></p>
+    </section>
+
+    <!-- 인사말 -->
+    <section class="section fade">
+      <p class="section-label">INVITATION</p>
+      <h2 class="section-title">초대합니다</h2>
+      <p class="greeting" id="greeting"></p>
+      <div class="parents" id="parents"></div>
+      <button class="btn-outline" id="btn-contact">연락하기</button>
+    </section>
+
+    <!-- 달력 -->
+    <section class="section fade">
+      <p class="section-label">WEDDING DAY</p>
+      <p class="cal-head" id="cal-head"></p>
+      <table class="calendar" id="calendar"></table>
+      <p class="dday" id="dday"></p>
+    </section>
+
+    <!-- 갤러리 -->
+    <section class="section fade">
+      <p class="section-label">GALLERY</p>
+      <h2 class="section-title">우리의 순간</h2>
+      <div class="viewer">
+        <div class="viewer-track" id="viewer-track"></div>
+        <button class="viewer-nav viewer-prev" id="viewer-prev" aria-label="이전 사진">&#8249;</button>
+        <button class="viewer-nav viewer-next" id="viewer-next" aria-label="다음 사진">&#8250;</button>
+        <span class="viewer-count" id="viewer-count"></span>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </section>
+
+    <!-- 오시는 길 -->
+    <section class="section fade">
+      <p class="section-label">LOCATION</p>
+      <h2 class="section-title">오시는 길</h2>
+      <p class="venue-name" id="venue-name"></p>
+      <p class="venue-addr" id="venue-addr"></p>
+      <div class="map-buttons" id="map-buttons"></div>
+      <dl class="transport" id="transport"></dl>
+      <p class="transport-notice" id="transport-notice"></p>
+    </section>
+
+    <!-- 마음 전하실 곳 -->
+    <section class="section fade" id="account-section">
+      <p class="section-label">ACCOUNT</p>
+      <h2 class="section-title">마음 전하실 곳</h2>
+      <p class="account-note">참석이 어려우신 분들을 위해 기재했습니다.<br />너그러운 마음으로 양해 부탁드립니다.</p>
+      <div class="accordion" id="acc-groom"></div>
+      <div class="accordion" id="acc-bride"></div>
+    </section>
+
+    <!-- 공유 -->
+    <section class="section share fade">
+      <button class="btn-fill" id="btn-share">청첩장 공유하기</button>
+      <button class="btn-outline" id="btn-copy-link">링크 복사하기</button>
+    </section>
+
+    <footer class="footer">Thank you</footer>
+  </main>
+
+  <!-- 연락처 모달 -->
+  <div class="modal" id="contact-modal" hidden>
+    <div class="modal-box">
+      <button class="modal-close" data-close>&times;</button>
+      <h3>연락하기</h3>
+      <div id="contact-list"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
