@@ -182,19 +182,49 @@
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let flakes = [];
+
+  // 눈 결정 모양을 한 번만 그려두고 매 프레임 복사해서 사용
+  const sprite = document.createElement("canvas");
+  sprite.width = sprite.height = 64;
+  (() => {
+    const g = sprite.getContext("2d");
+    g.translate(32, 32);
+    g.strokeStyle = "#a9bdd6";
+    g.lineWidth = 3;
+    g.lineCap = "round";
+    for (let i = 0; i < 6; i++) {
+      g.beginPath();
+      g.moveTo(0, 0);
+      g.lineTo(0, -28);
+      // 가지
+      g.moveTo(0, -12);
+      g.lineTo(-8, -20);
+      g.moveTo(0, -12);
+      g.lineTo(8, -20);
+      g.moveTo(0, -20);
+      g.lineTo(-5, -25);
+      g.moveTo(0, -20);
+      g.lineTo(5, -25);
+      g.stroke();
+      g.rotate(Math.PI / 3);
+    }
+  })();
+
   function resize() {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = innerWidth * dpr;
     canvas.height = innerHeight * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.round(Math.min(innerWidth, 600) / 8);
+    const count = Math.round(Math.min(innerWidth, 600) / 12);
     flakes = Array.from({ length: count }, () => ({
       x: Math.random() * innerWidth,
       y: Math.random() * innerHeight,
-      r: 1 + Math.random() * 2.5,
-      speed: 0.3 + Math.random() * 0.8,
+      size: 8 + Math.random() * 10,
+      speed: 0.3 + Math.random() * 0.7,
       drift: Math.random() * Math.PI * 2,
-      alpha: 0.4 + Math.random() * 0.5,
+      angle: Math.random() * Math.PI,
+      spin: (Math.random() - 0.5) * 0.02,
+      alpha: 0.5 + Math.random() * 0.4,
     }));
   }
   function snow() {
@@ -203,14 +233,17 @@
       f.y += f.speed;
       f.drift += 0.01;
       f.x += Math.sin(f.drift) * 0.4;
-      if (f.y > innerHeight + 5) {
-        f.y = -5;
+      f.angle += f.spin;
+      if (f.y > innerHeight + f.size) {
+        f.y = -f.size;
         f.x = Math.random() * innerWidth;
       }
-      ctx.beginPath();
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(190, 205, 225, ${f.alpha})`;
-      ctx.fill();
+      ctx.save();
+      ctx.translate(f.x, f.y);
+      ctx.rotate(f.angle);
+      ctx.globalAlpha = f.alpha;
+      ctx.drawImage(sprite, -f.size / 2, -f.size / 2, f.size, f.size);
+      ctx.restore();
     }
     requestAnimationFrame(snow);
   }
