@@ -215,16 +215,16 @@
     canvas.width = innerWidth * dpr;
     canvas.height = innerHeight * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.round(Math.min(innerWidth, 600) / 12);
+    const count = Math.round(Math.min(innerWidth, 600) / 30);
     flakes = Array.from({ length: count }, () => ({
       x: Math.random() * innerWidth,
       y: Math.random() * innerHeight,
       size: 8 + Math.random() * 10,
-      speed: 0.3 + Math.random() * 0.7,
+      speed: 0.2 + Math.random() * 0.4,
       drift: Math.random() * Math.PI * 2,
       angle: Math.random() * Math.PI,
       spin: (Math.random() - 0.5) * 0.02,
-      alpha: 0.5 + Math.random() * 0.4,
+      alpha: 0.4 + Math.random() * 0.3,
     }));
   }
   function snow() {
