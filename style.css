@@ -1,10 +1,11 @@
 :root {
-  --bg: #f8fafc;
+  --bg: #ffffff;
   --paper: #ffffff;
-  --text: #2a313c;
-  --muted: #6b7584;
-  --accent: #52709a;
-  --line: #e3e9f0;
+  --soft: #f3f5f8;
+  --text: #222222;
+  --muted: #767676;
+  --accent: #3f6fb5;
+  --line: #e9ecef;
   --serif: "Gowun Batang", serif;
   --sans: "Noto Sans KR", sans-serif;
 }
@@ -12,7 +13,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #e6ebf1;
+  background: #f3f4f6;
   color: var(--text);
   font-family: var(--sans);
   font-weight: 400;
@@ -100,8 +101,8 @@ button { font-family: inherit; cursor: pointer; }
 .calendar { margin: 0 auto; border-collapse: collapse; font-size: 14px; }
 .calendar th, .calendar td { width: 42px; height: 38px; text-align: center; font-weight: 400; }
 .calendar th { color: var(--muted); font-size: 12px; }
-.calendar .sun { color: #d0796b; }
-.calendar .sat { color: #7b93b8; }
+.calendar .sun { color: #e0584c; }
+.calendar .sat { color: #3f6fb5; }
 .calendar .day-mark span {
   display: inline-flex; align-items: center; justify-content: center;
   width: 32px; height: 32px; border-radius: 50%;
@@ -117,7 +118,7 @@ button { font-family: inherit; cursor: pointer; }
 .viewer-track img {
   flex: 0 0 100%; display: block; width: 100%;
   aspect-ratio: 2 / 3; object-fit: cover;
-  scroll-snap-align: center; background: #e4ebf2;
+  scroll-snap-align: center; background: var(--soft);
 }
 .viewer-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
@@ -177,7 +178,7 @@ button { font-family: inherit; cursor: pointer; }
 .acc-btns button {
   padding: 6px 10px; font-size: 12px; line-height: 1.4;
   border: 1px solid var(--line); border-radius: 6px;
-  background: var(--bg); color: var(--text); text-decoration: none;
+  background: var(--soft); color: var(--text); text-decoration: none;
 }
 
 /* ---------- 푸터 ---------- */
