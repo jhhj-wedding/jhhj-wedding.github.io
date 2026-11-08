@@ -56,8 +56,8 @@ const CONFIG = {
 따뜻한 마음으로 축복해주시면 감사하겠습니다.`,
 
   // images 폴더에 넣은 파일 이름
-  mainImage: "images/main-illust.jpg",
-  mainImageArch: false, // true: 사진을 아치 모양 액자에 넣음 (사진용) / false: 액자 없이 그대로 (일러스트용)
+  mainImage: "images/main.jpg",
+  mainImageArch: true, // true: 사진을 아치 모양 액자에 넣음 (사진용) / false: 액자 없이 그대로 (일러스트용)
   gallery: [
     "images/gallery1.jpg",
     "images/gallery2.jpg",
