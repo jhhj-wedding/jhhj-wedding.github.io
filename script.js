@@ -36,6 +36,7 @@
 
   // ---------- 메인 ----------
   $("hero-photo").src = C.mainImage;
+  $("hero-photo").classList.toggle("no-arch", C.mainImageArch === false);
   $("hero-groom").textContent = C.groom.name;
   $("hero-bride").textContent = C.bride.name;
   $("hero-tagline").textContent = C.tagline || "";
