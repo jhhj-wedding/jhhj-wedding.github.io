@@ -64,18 +64,16 @@ const CONFIG = {
   ],
 
   // 마음 전하실 곳 (양쪽 다 비워두면 섹션이 숨겨짐)
-  // TODO: 은행 / 계좌번호를 실제 값으로 바꿔주세요
   // 카카오페이 송금 링크가 있으면 kakaopay: "https://qr.kakaopay.com/..." 추가 (없으면 버튼 숨김)
   accounts: {
     groom: [
-      { role: "신랑", name: "석지환", bank: "OO은행", number: "000-0000-0000" },
-      { role: "아버지", name: "석희원", bank: "OO은행", number: "000-0000-0000" },
-      { role: "어머니", name: "이미경", bank: "OO은행", number: "000-0000-0000" },
+      { role: "신랑", name: "석지환", bank: "토스뱅크", number: "1002-8283-6839" },
+      { role: "아버지", name: "석희원", bank: "카카오뱅크", number: "3333-38-7202313" },
+      { role: "어머니", name: "이미경", bank: "카카오뱅크", number: "3333-38-7196718" },
     ],
     bride: [
-      { role: "신부", name: "백혜정", bank: "OO은행", number: "000-0000-0000" },
-      { role: "아버지", name: "백운봉", bank: "OO은행", number: "000-0000-0000" },
-      { role: "어머니", name: "남인숙", bank: "OO은행", number: "000-0000-0000" },
+      { role: "신부", name: "백혜정", bank: "카카오뱅크", number: "3333-37-9617804" },
+      { role: "부모님", name: "백운봉(남인숙)", bank: "카카오뱅크", number: "3333-38-7740582" },
     ],
   },
 };
