@@ -171,19 +171,11 @@ button { font-family: inherit; cursor: pointer; }
 .acc-who span { color: var(--muted); }
 .acc-num { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }
 .acc-btns { display: flex; justify-content: flex-end; gap: 4px; }
-.acc-btns button, .acc-btns a {
+.acc-btns button {
   padding: 6px 10px; font-size: 12px; line-height: 1.4;
   border: 1px solid var(--line); border-radius: 6px;
   background: var(--bg); color: var(--text); text-decoration: none;
 }
-/* 송금 버튼: 브랜드 색 알약 모양 아이콘 */
-.acc-btns .toss, .acc-btns .kakaopay {
-  display: inline-flex; align-items: center; gap: 2px; border-radius: 999px;
-  font-weight: 800; letter-spacing: -.3px;
-}
-.acc-btns .toss { background: #3182f6; border-color: #3182f6; color: #fff; }
-.acc-btns .kakaopay { background: #fee500; border-color: #fee500; color: #191919; }
-.acc-btns .kakaopay svg { width: 13px; height: 12px; fill: currentColor; }
 
 /* ---------- 푸터 ---------- */
 .footer { padding: 40px 0 56px; text-align: center; font-family: var(--serif); color: var(--muted); font-size: 13px; letter-spacing: 2px; }

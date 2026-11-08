@@ -64,10 +64,9 @@ const CONFIG = {
   ],
 
   // 마음 전하실 곳 (양쪽 다 비워두면 섹션이 숨겨짐)
-  // 카카오페이 송금 링크가 있으면 kakaopay: "https://qr.kakaopay.com/..." 추가 (없으면 버튼 숨김)
   accounts: {
     groom: [
-      { role: "신랑", name: "석지환", bank: "토스뱅크", number: "1002-8283-6839", kakaopay: "https://qr.kakaopay.com/Ej8DgEkIT" },
+      { role: "신랑", name: "석지환", bank: "토스뱅크", number: "1002-8283-6839" },
       { role: "아버지", name: "석희원", bank: "카카오뱅크", number: "3333-38-7202313" },
       { role: "어머니", name: "이미경", bank: "카카오뱅크", number: "3333-38-7196718" },
     ],

@@ -132,25 +132,12 @@
       list.map((a, i) =>
         `<div class="acc-row"><div class="acc-who">${a.role ? `<span>${a.role}</span> ` : ""}${a.name}</div>` +
         `<div class="acc-num">${a.bank} ${a.number}</div>` +
-        `<div class="acc-btns"><button data-copy="${i}">복사</button>` +
-        `<button class="toss" data-toss="${i}" aria-label="토스로 송금">toss</button>` +
-        (a.kakaopay ? `<a class="kakaopay" href="${a.kakaopay}" target="_blank" rel="noopener" aria-label="카카오페이로 송금">` +
-          `<svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 0C4.5 0 0 3.5 0 7.8c0 2.8 1.9 5.2 4.7 6.6L3.7 18l4.2-2.8c.7.1 1.4.2 2.1.2 5.5 0 10-3.5 10-7.8S15.5 0 10 0z"/></svg>pay</a>` : "") +
-        "</div></div>").join("") +
+        `<div class="acc-btns"><button data-copy="${i}">복사</button></div></div>`).join("") +
       "</div>";
     el.querySelector(".acc-head").onclick = () => el.classList.toggle("open");
     el.querySelectorAll("[data-copy]").forEach((b) => {
       const a = list[b.dataset.copy];
       b.onclick = () => copy(a.number, "계좌번호가 복사되었습니다");
-    });
-    // 토스 비공식 딥링크: 앱이 안 열릴 때를 대비해 계좌번호도 함께 복사
-    el.querySelectorAll("[data-toss]").forEach((b) => {
-      const a = list[b.dataset.toss];
-      b.onclick = async () => {
-        await copy(a.number, "계좌번호 복사 완료 · 토스를 엽니다");
-        const params = new URLSearchParams({ amount: "0", bank: a.bank, accountNo: a.number.replace(/\D/g, ""), origin: "qr" });
-        location.href = `supertoss://send?${params}`;
-      };
     });
   }
   accordion($("acc-groom"), "신랑측 계좌번호", C.accounts.groom);
