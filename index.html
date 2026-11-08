@@ -86,11 +86,14 @@
 
     <!-- 공유 -->
     <section class="section share fade">
-      <button class="btn-fill" id="btn-share">청첩장 공유하기</button>
+      <button class="btn-kakao" id="btn-share">
+        <svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 0C4.5 0 0 3.5 0 7.8c0 2.8 1.9 5.2 4.7 6.6L3.7 18l4.2-2.8c.7.1 1.4.2 2.1.2 5.5 0 10-3.5 10-7.8S15.5 0 10 0z"/></svg>
+        카카오톡으로 공유하기
+      </button>
       <button class="btn-outline" id="btn-copy-link">링크 복사하기</button>
     </section>
 
-    <footer class="footer">Thank you</footer>
+    <footer class="footer">감사합니다</footer>
   </main>
 
   <!-- 연락처 모달 -->
@@ -104,6 +107,7 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>

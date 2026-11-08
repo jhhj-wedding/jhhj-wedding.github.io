@@ -146,8 +146,24 @@
 
   // ---------- 공유 ----------
   $("btn-copy-link").onclick = () => copy(location.href, "링크가 복사되었습니다");
+  const kakaoReady = !!(C.kakaoJsKey && window.Kakao);
+  if (kakaoReady && !Kakao.isInitialized()) Kakao.init(C.kakaoJsKey);
   $("btn-share").onclick = async () => {
-    if (navigator.share) {
+    if (kakaoReady) {
+      const url = location.origin + location.pathname;
+      Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: document.querySelector('meta[property="og:title"]').content,
+          description: document.querySelector('meta[property="og:description"]').content,
+          imageUrl: document.querySelector('meta[property="og:image"]').content,
+          imageWidth: 800,
+          imageHeight: 400,
+          link: { mobileWebUrl: url, webUrl: url },
+        },
+        buttons: [{ title: "청첩장 보기", link: { mobileWebUrl: url, webUrl: url } }],
+      });
+    } else if (navigator.share) {
       try {
         await navigator.share({ title: document.title, url: location.href });
       } catch {}

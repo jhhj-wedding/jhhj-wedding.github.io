@@ -78,7 +78,7 @@ button { font-family: inherit; cursor: pointer; }
 .parents .rel { color: var(--muted); font-size: 13px; margin: 0 6px; }
 .parents strong { font-weight: 500; }
 
-.btn-outline, .btn-fill {
+.btn-outline {
   display: block;
   width: 100%;
   max-width: 280px;
@@ -88,7 +88,12 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 8px;
 }
 .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
-.btn-fill { background: var(--accent); border: 1px solid var(--accent); color: #fff; }
+.btn-kakao {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; max-width: 280px; margin: 0 auto 10px; padding: 13px;
+  border: 1px solid #fee500; border-radius: 8px; background: #fee500; color: #191919; font-size: 14px;
+}
+.btn-kakao svg { width: 18px; height: 16px; fill: currentColor; }
 
 /* ---------- 달력 ---------- */
 .cal-head { font-family: var(--serif); font-size: 18px; margin-bottom: 24px; }

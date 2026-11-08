@@ -22,6 +22,9 @@ const CONFIG = {
 
   tagline: "첫눈처럼 설레는 날, 결혼합니다.",
 
+  // 카카오톡 공유 — Kakao Developers 앱의 JavaScript 키 (비워두면 휴대폰 기본 공유창 사용)
+  kakaoJsKey: "",
+
   venue: {
     name: "더 리버사이드 호텔",
     hall: "노벨라홀",
