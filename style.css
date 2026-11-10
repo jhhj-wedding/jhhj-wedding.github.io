@@ -156,7 +156,7 @@ button { font-family: inherit; cursor: pointer; }
 .transport { text-align: left; font-size: 14px; }
 .transport dt { font-weight: 500; margin-top: 16px; color: var(--accent); }
 .transport dd { color: var(--text); white-space: pre-line; }
-.transport-notice { margin-top: 24px; font-size: 13px; color: var(--accent); }
+.transport-notice { margin-top: 24px; font-size: 13px; color: var(--accent); white-space: pre-line; word-break: keep-all; }
 .transport-notice:empty { display: none; }
 
 /* ---------- 계좌 ---------- */
