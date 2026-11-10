@@ -83,6 +83,21 @@
     : diff === 0 ? `오늘은 <strong>${C.groom.name} ♥ ${C.bride.name}</strong>의 결혼식입니다`
     : `${C.groom.name} ♥ ${C.bride.name}의 결혼식이 <strong>${-diff}일</strong> 지났습니다`;
 
+  // ---------- 카운트다운 (예식 시각까지 1초마다 갱신) ----------
+  const cd = $("countdown");
+  const cdNums = cd.querySelectorAll(".cd-num");
+  const tick = () => {
+    const left = Math.max(0, date - new Date());
+    if (left === 0) { cd.hidden = true; return false; }
+    const t = Math.floor(left / 1000);
+    [Math.floor(t / 86400), Math.floor(t / 3600) % 24, Math.floor(t / 60) % 60, t % 60]
+      .forEach((v, i) => { cdNums[i].textContent = String(v).padStart(2, "0"); });
+    return true;
+  };
+  if (tick()) {
+    const timer = setInterval(() => { if (!tick()) clearInterval(timer); }, 1000);
+  }
+
   // ---------- 갤러리 ----------
   const track = $("viewer-track");
   const thumbs = $("thumbs");
@@ -123,7 +138,7 @@
     <a href="https://map.kakao.com/?q=${q}" target="_blank" rel="noopener">카카오맵</a>
     <a href="tmap://search?name=${q}">티맵</a>`;
   $("transport").innerHTML = C.venue.transport.map((t) => `<dt>${t.title}</dt><dd>${t.desc}</dd>`).join("");
-  $("transport-notice").textContent = C.venue.notice ? `* ${C.venue.notice}` : "";
+  $("transport-notice").textContent = C.venue.notice || "";
 
   // ---------- 계좌 ----------
   function accordion(el, title, list) {

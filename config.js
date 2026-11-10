@@ -43,7 +43,7 @@ const CONFIG = {
       },
       { title: "자가용", desc: "내비게이션 '더 리버사이드 호텔' 검색 (발렛 주차)" },
     ],
-    notice: "발렛 주차로 혼잡이 예상되오니,\n대중교통으로 편히 오시길 바랍니다.",
+    notice: "발렛 주차로 혼잡이 예상되오니\n대중교통으로 편히 오시길 바랍니다.",
   },
 
   greeting: `손끝 시리던 겨울, 운명처럼 만나
@@ -56,7 +56,7 @@ const CONFIG = {
 따뜻한 마음으로 축복해주시면 감사하겠습니다.`,
 
   // images 폴더에 넣은 파일 이름
-  mainImage: "images/main.jpg",
+  mainImage: "images/main1.png",
   mainImageArch: true, // true: 사진을 아치 모양 액자에 넣음 (사진용) / false: 액자 없이 그대로 (일러스트용)
   gallery: [
     "images/gallery1.jpg",
