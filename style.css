@@ -201,6 +201,16 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- 푸터 ---------- */
 .footer { padding: 40px 0 56px; text-align: center; font-family: var(--serif); color: var(--muted); font-size: 13px; letter-spacing: 2px; }
+/* 마지막 사진: 풍선 위치(%)에 글자를 얹음 — 사진 비율 1440x1788 기준 */
+.thanks { position: relative; padding: 0; margin-top: 16px; container-type: inline-size; }
+.thanks img { display: block; width: 100%; height: auto; }
+.thanks-word {
+  position: absolute; transform: translate(-50%, -50%);
+  font-family: var(--serif); font-weight: 700; font-size: 5.6cqw; letter-spacing: .08em;
+  color: #c4566d; white-space: nowrap;
+}
+.thanks-l { left: 28%; top: 24.6%; }
+.thanks-r { left: 68.2%; top: 19%; }
 
 /* ---------- 모달 ---------- */
 [hidden] { display: none !important; }
