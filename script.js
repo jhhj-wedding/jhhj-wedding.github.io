@@ -174,7 +174,7 @@
           description: document.querySelector('meta[property="og:description"]').content,
           imageUrl: document.querySelector('meta[property="og:image"]').content,
           imageWidth: 800,
-          imageHeight: 400,
+          imageHeight: 480,
           link: { mobileWebUrl: url, webUrl: url },
         },
         buttons: [{ title: "청첩장 보기", link: { mobileWebUrl: url, webUrl: url } }],
