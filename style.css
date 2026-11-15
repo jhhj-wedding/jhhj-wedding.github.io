@@ -209,8 +209,9 @@ button { font-family: inherit; cursor: pointer; }
   font-family: "Nanum Pen Script", var(--serif); font-weight: 400; font-size: 4.7cqw; /* 손글씨, 풍선 안에 한 줄 (여백 있게) */
   color: #555; white-space: nowrap;
 }
-/* 사진 아래 따로 띄운 인사 (사진 안에 넣으면 글자 % 위치가 틀어짐) */
-.thanks-note { padding: 36px 0 56px; text-align: center; font-family: var(--serif); font-size: 17px; letter-spacing: 4px; color: var(--accent); }
+/* 맨 끝 인사 — 공유 버튼 아래 (사진 안에 넣으면 풍선 글자 % 위치가 틀어짐) */
+.thanks-note { padding: 0 0 56px; text-align: center; font-family: var(--serif); font-size: 17px; letter-spacing: 4px; color: var(--accent); }
+.thanks + .share::before { display: none; } /* 사진 바로 아래라 눈송이 장식이 사진에 걸림 */
 .thanks-l { left: 27.9%; top: 27.6%; }
 .thanks-r { left: 68.2%; top: 22%; }
 
