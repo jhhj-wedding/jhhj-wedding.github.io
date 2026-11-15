@@ -59,11 +59,11 @@ const CONFIG = {
   mainImage: "images/gallery5.jpg", // 하트 풍선 사진 (갤러리 5번째와 같은 사진)
   mainImageArch: true, // true: 사진을 아치 모양 액자에 넣음 (사진용) / false: 액자 없이 그대로 (일러스트용)
   gallery: [
+    "images/gallery5.jpg", // 하트 풍선 (메인 사진)
     "images/gallery1.jpg", // 창가 베일 아래 마주 보기
     "images/gallery3.jpg", // 꽃 아치 아래 전신
     "images/gallery2.jpg", // 신부 단독
     "images/main-arch.jpg", // 빨간 꽃
-    "images/gallery5.jpg", // 하트 풍선 (메인 사진)
     "images/gallery4.jpg", // 클로즈업 마주 보기
     "images/gallery6.jpg", // 노을 베일 (마무리)
   ],
