@@ -38,7 +38,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3; /* 메인 사진(main-arch, 빨간 꽃) 비율 그대로 — 안 잘림 */
+  aspect-ratio: 2 / 3; /* 메인 사진(gallery5, 하트 풍선) 비율 그대로 — 안 잘림 */
   object-fit: cover;
   border-radius: 50% 50% 8px 8px / 18% 18% 8px 8px;
   background: linear-gradient(170deg, #dfe7ef, #b9c7d8);
